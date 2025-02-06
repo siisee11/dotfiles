@@ -4,7 +4,7 @@
 
 ```bash
 $ cd
-$ git clone
+$ git@github.com:siisee11/dotfiles.git
 
 ```
 ## Link vimrc file
