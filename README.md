@@ -1,12 +1,31 @@
-# NOTICE
+# Dotfiles for me
 
-** clone this repo into root of user directory **
+- Clone this repo into root of user directory
 
 ```bash
 $ cd
 $ git@github.com:siisee11/dotfiles.git
 
 ```
+
+## Rust
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+
+## Mise
+
+```
+curl https://mise.run | sh
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+```
+
+
+
+# Legacies
+
 ## Link vimrc file
 
 ```bash
