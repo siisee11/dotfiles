@@ -1,11 +1,10 @@
 # Dotfiles for me
 
-- Clone this repo into root of user directory
+
+## Start with chezmoi
 
 ```bash
-$ cd
-$ git@github.com:siisee11/dotfiles.git
-
+chezmoi init --apply siisee11
 ```
 
 ## Rust
