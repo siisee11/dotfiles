@@ -1,6 +1,6 @@
 [push]
 	autoSetupRemote = true
 [user]
-	email = siisee111@gmail.com
+	email = {{ .email }}
 [pull]
 	rebase = true
