@@ -1,5 +1,3 @@
-# Dotfiles for me
-
 
 ## Start with chezmoi
 
