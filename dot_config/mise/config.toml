@@ -1,0 +1,9 @@
+[tools]
+"aqua:BurntSushi/ripgrep" = "latest"
+bun = "latest"
+"cargo:ripgrep" = "14"
+node = "22"
+"npm:@antfu/ni" = "latest"
+rust = "latest"
+"ubi:ajeetdsouza/zoxide" = "latest"
+"ubi:twpayne/chezmoi" = "latest"
