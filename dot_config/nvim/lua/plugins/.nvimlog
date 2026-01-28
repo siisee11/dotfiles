@@ -1,0 +1,2 @@
+WRN 2026-01-05T09:49:13.974 ?.23326    server_start:199: Failed to start server: operation not permitted: /var/folders/g7/lfxzfzr10zg413z65w71t6rh0000gn/T/nvim.dev/fkzBkl/nvim.23326.0
+WRN 2026-01-05T09:49:19.704 ?.23490    server_start:199: Failed to start server: operation not permitted: /var/folders/g7/lfxzfzr10zg413z65w71t6rh0000gn/T/nvim.dev/mvuWnt/nvim.23490.0

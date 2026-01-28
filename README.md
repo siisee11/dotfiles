@@ -23,15 +23,16 @@ echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
 
 # Legacies
 
-## Link vimrc file
+## Link Neovim config
+
+```bash
+$ ln -s -f dotfiles/dot_config/nvim ~/.config/nvim
+```
+
+## Link Vim config (legacy)
 
 ```bash
 $ ln -s -f dotfiles/vim/.vimrc ~/.vimrc
-```
-
-if nvim
-```bash
-$ ln -s -f dotfiles/vim/init.vim ~/.config/nvim/init.vim
 ```
 
 ## Link tmux.conf file
