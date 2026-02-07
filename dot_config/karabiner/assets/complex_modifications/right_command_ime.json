@@ -1,0 +1,30 @@
+{
+  "title": "Right Command as Input Source Switch",
+  "rules": [
+    {
+      "description": "Right Command alone: switch input source (Control+Space)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": ["control"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
