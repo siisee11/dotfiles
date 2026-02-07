@@ -7,21 +7,25 @@ scripts_dir="$(
 )"
 repo_root="$scripts_dir/.."
 
-_die() {
+die() {
   printf 'error: %s\n' "$*" >&2
   exit 1
 }
 
 src="${1:-}"
 if [[ -z "$src" ]]; then
-  _die "usage: ./scripts/update-raycast-export.sh /path/to/rayconfig"
+  die "usage: ./scripts/update-raycast-export.sh /path/to/*.rayconfig"
 fi
 
 if [[ ! -f "$src" ]]; then
-  _die "file not found: $src"
+  die "file not found: $src"
 fi
 
-dest="$repo_root/rayconfig"
+base="$(basename "$src")"
+dest_dir="$repo_root/raycast"
+mkdir -p "$dest_dir"
+
+dest="$dest_dir/$base"
 cp -f "$src" "$dest"
 
 printf '%s\n' "Updated $dest"

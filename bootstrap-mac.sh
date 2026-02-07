@@ -170,12 +170,25 @@ raycast_import() {
     return
   fi
 
-  local src="$script_dir/rayconfig"
-  if [[ ! -f "$src" ]]; then
+  local src=""
+  shopt -s nullglob
+  local candidates=("$script_dir"/raycast/*.rayconfig)
+  shopt -u nullglob
+
+  if [[ ${#candidates[@]} -gt 0 ]]; then
+    src="$(printf '%s\n' "${candidates[@]}" | sort | tail -n 1)"
+  elif [[ -f "$script_dir/rayconfig" ]]; then
+    # Back-compat for older versions of this repo.
+    src="$script_dir/rayconfig"
+  else
     return
   fi
 
-  local dest="$HOME/Downloads/rayconfig"
+  if [[ -z "$src" || ! -f "$src" ]]; then
+    return
+  fi
+
+  local dest="$HOME/Downloads/$(basename "$src")"
   mkdir -p "$HOME/Downloads"
   cp -f "$src" "$dest"
 
@@ -200,7 +213,7 @@ next_steps() {
   log "Next steps (manual):"
   log "- Open Karabiner-Elements and allow Accessibility + Input Monitoring permissions"
   log "- Confirm Input Source shortcut is Control+Space and you have 2 input sources (ABC, 2-Set Korean)"
-  log "- Raycast: import $HOME/Downloads/rayconfig if it didn't auto-open"
+  log "- Raycast: import the exported .rayconfig file from $HOME/Downloads if it didn't auto-open"
 }
 
 main() {

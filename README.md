@@ -22,7 +22,7 @@ macOS 초기화(새 맥) 후에도 같은 개발 환경을 최대한 동일하�
 - 이 레포를 source로 `chezmoi apply`
 - `oh-my-zsh` 설치(기본 `~/.zshrc`가 사용)
 - `mise install` 실행(가능한 경우)
-- (가능하면) Raycast export 파일을 `~/Downloads/rayconfig`로 복사 후 열기
+- (가능하면) Raycast export 파일(`raycast/*.rayconfig`)을 `~/Downloads/`로 복사 후 열기
 
 옵션:
 
@@ -60,21 +60,21 @@ macOS 초기화(새 맥) 후에도 같은 개발 환경을 최대한 동일하�
 
 Raycast Pro(Cloud Sync) 없이도 export/import로 대부분의 설정/데이터를 옮길 수 있다.
 
-- 이 레포에는 Raycast export 파일이 `rayconfig`로 포함되어 있다.
-- `bootstrap-mac.sh`는 이를 `~/Downloads/rayconfig`로 복사하고(가능하면) 열어준다.
+- 이 레포에는 Raycast export 파일을 `raycast/` 폴더에 **원본 파일명 그대로** 보관한다.
+- `bootstrap-mac.sh`는 `raycast/*.rayconfig` 중 하나를 골라 `~/Downloads/`로 복사하고(가능하면) 열어준다.
 
 새 맥에서 Import가 자동으로 뜨지 않으면:
 
 1. Raycast 실행
-1. 설정에서 Import/Restore 흐름으로 `~/Downloads/rayconfig`를 선택
+1. 설정에서 Import/Restore 흐름으로 `~/Downloads/<export>.rayconfig`를 선택
 
 Raycast export 파일을 갱신하는 방법(기존 맥에서):
 
-1. Raycast에서 Export 기능으로 `rayconfig` 파일을 새로 생성
-1. 이 레포에서 아래 스크립트로 덮어쓰기
+1. Raycast에서 Export 기능으로 `.rayconfig` 파일을 새로 생성
+1. 이 레포에서 아래 스크립트로 `raycast/`에 복사(파일명 유지)
 
 ```bash
-./scripts/update-raycast-export.sh /path/to/rayconfig
+./scripts/update-raycast-export.sh /path/to/<export>.rayconfig
 ```
 
 ### VS Code Extensions
